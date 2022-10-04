@@ -50,12 +50,12 @@ Partial Class Form1
         Me.txtAnoBusqueda = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtMarcaBusqueda = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvListaAutos = New System.Windows.Forms.DataGridView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.cbTransmision = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvListaAutos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -262,7 +262,7 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.txtAnoBusqueda)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.txtMarcaBusqueda)
-        Me.GroupBox2.Controls.Add(Me.DataGridView1)
+        Me.GroupBox2.Controls.Add(Me.dgvListaAutos)
         Me.GroupBox2.Location = New System.Drawing.Point(294, 12)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(449, 409)
@@ -311,13 +311,13 @@ Partial Class Form1
         Me.txtMarcaBusqueda.Size = New System.Drawing.Size(121, 20)
         Me.txtMarcaBusqueda.TabIndex = 21
         '
-        'DataGridView1
+        'dgvListaAutos
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 44)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(437, 359)
-        Me.DataGridView1.TabIndex = 0
+        Me.dgvListaAutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvListaAutos.Location = New System.Drawing.Point(6, 44)
+        Me.dgvListaAutos.Name = "dgvListaAutos"
+        Me.dgvListaAutos.Size = New System.Drawing.Size(437, 359)
+        Me.dgvListaAutos.TabIndex = 0
         '
         'PictureBox1
         '
@@ -332,6 +332,7 @@ Partial Class Form1
         'cbTransmision
         '
         Me.cbTransmision.FormattingEnabled = True
+        Me.cbTransmision.Items.AddRange(New Object() {"Manual", "Automatico"})
         Me.cbTransmision.Location = New System.Drawing.Point(78, 213)
         Me.cbTransmision.Name = "cbTransmision"
         Me.cbTransmision.Size = New System.Drawing.Size(121, 21)
@@ -352,7 +353,7 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvListaAutos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -385,7 +386,7 @@ Partial Class Form1
     Friend WithEvents txtAnoBusqueda As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents txtMarcaBusqueda As TextBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvListaAutos As DataGridView
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents cbTransmision As ComboBox
 End Class
