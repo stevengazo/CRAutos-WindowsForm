@@ -3,6 +3,7 @@
     Public Modelo As String
     Public Cilindrada As Integer
     Public Estilo As String
+    Public Año As Integer
     Public Precio As Double
     Public Color As String
     Public Combustible As String

@@ -1,6 +1,6 @@
 ﻿Module DATA
 
-    Dim autoEjemplo As New Auto With {.Marca = "Toyota",
+    Public autoEjemplo As New Auto With {.Marca = "Toyota",
         .Cilindrada = 100,
         .Color = "Negro",
         .Combustible = "Diesel",

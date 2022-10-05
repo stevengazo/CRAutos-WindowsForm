@@ -24,6 +24,11 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.cbCombustible = New System.Windows.Forms.ComboBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.cbTransmision = New System.Windows.Forms.ComboBox()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
@@ -45,22 +50,28 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtAnoBusqueda = New System.Windows.Forms.NumericUpDown()
+        Me.btnLimpiarBusqueda = New System.Windows.Forms.Button()
         Me.btbBuscar = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtAnoBusqueda = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtMarcaBusqueda = New System.Windows.Forms.TextBox()
         Me.dgvListaAutos = New System.Windows.Forms.DataGridView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.cbTransmision = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.txtAnoBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvListaAutos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
+        Me.GroupBox1.Controls.Add(Me.Label15)
+        Me.GroupBox1.Controls.Add(Me.Label14)
+        Me.GroupBox1.Controls.Add(Me.cbCombustible)
+        Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.cbTransmision)
         Me.GroupBox1.Controls.Add(Me.btnLimpiar)
         Me.GroupBox1.Controls.Add(Me.btnAgregar)
@@ -82,277 +93,217 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(276, 313)
-        Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Registro "
+        '
+        'Label15
+        '
+        resources.ApplyResources(Me.Label15, "Label15")
+        Me.Label15.Name = "Label15"
+        '
+        'Label14
+        '
+        resources.ApplyResources(Me.Label14, "Label14")
+        Me.Label14.Name = "Label14"
+        '
+        'cbCombustible
+        '
+        resources.ApplyResources(Me.cbCombustible, "cbCombustible")
+        Me.cbCombustible.FormattingEnabled = True
+        Me.cbCombustible.Items.AddRange(New Object() {resources.GetString("cbCombustible.Items"), resources.GetString("cbCombustible.Items1")})
+        Me.cbCombustible.Name = "cbCombustible"
+        '
+        'Label13
+        '
+        resources.ApplyResources(Me.Label13, "Label13")
+        Me.Label13.Name = "Label13"
+        '
+        'cbTransmision
+        '
+        resources.ApplyResources(Me.cbTransmision, "cbTransmision")
+        Me.cbTransmision.FormattingEnabled = True
+        Me.cbTransmision.Items.AddRange(New Object() {resources.GetString("cbTransmision.Items"), resources.GetString("cbTransmision.Items1")})
+        Me.cbTransmision.Name = "cbTransmision"
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Location = New System.Drawing.Point(127, 273)
+        resources.ApplyResources(Me.btnLimpiar, "btnLimpiar")
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(75, 23)
-        Me.btnLimpiar.TabIndex = 20
-        Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(30, 273)
+        resources.ApplyResources(Me.btnAgregar, "btnAgregar")
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(75, 23)
-        Me.btnAgregar.TabIndex = 19
-        Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'txtPrecio
         '
-        Me.txtPrecio.Location = New System.Drawing.Point(79, 186)
+        resources.ApplyResources(Me.txtPrecio, "txtPrecio")
         Me.txtPrecio.Name = "txtPrecio"
-        Me.txtPrecio.Size = New System.Drawing.Size(121, 20)
-        Me.txtPrecio.TabIndex = 17
         '
         'txtCilindrada
         '
-        Me.txtCilindrada.Location = New System.Drawing.Point(78, 159)
+        resources.ApplyResources(Me.txtCilindrada, "txtCilindrada")
         Me.txtCilindrada.Name = "txtCilindrada"
-        Me.txtCilindrada.Size = New System.Drawing.Size(121, 20)
-        Me.txtCilindrada.TabIndex = 16
         '
         'Label10
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(203, 245)
+        resources.ApplyResources(Me.Label10, "Label10")
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(27, 13)
-        Me.Label10.TabIndex = 15
-        Me.Label10.Text = "Kms"
         '
         'txtKilometraje
         '
-        Me.txtKilometraje.Location = New System.Drawing.Point(78, 242)
+        resources.ApplyResources(Me.txtKilometraje, "txtKilometraje")
         Me.txtKilometraje.Name = "txtKilometraje"
-        Me.txtKilometraje.Size = New System.Drawing.Size(121, 20)
-        Me.txtKilometraje.TabIndex = 14
         '
         'txtColor
         '
-        Me.txtColor.Location = New System.Drawing.Point(78, 105)
+        resources.ApplyResources(Me.txtColor, "txtColor")
         Me.txtColor.Name = "txtColor"
-        Me.txtColor.Size = New System.Drawing.Size(121, 20)
-        Me.txtColor.TabIndex = 13
         '
         'cbAno
         '
+        resources.ApplyResources(Me.cbAno, "cbAno")
         Me.cbAno.FormattingEnabled = True
-        Me.cbAno.Location = New System.Drawing.Point(78, 78)
         Me.cbAno.Name = "cbAno"
-        Me.cbAno.Size = New System.Drawing.Size(121, 21)
-        Me.cbAno.TabIndex = 12
         '
         'txtEstilo
         '
-        Me.txtEstilo.Location = New System.Drawing.Point(78, 52)
+        resources.ApplyResources(Me.txtEstilo, "txtEstilo")
         Me.txtEstilo.Name = "txtEstilo"
-        Me.txtEstilo.Size = New System.Drawing.Size(121, 20)
-        Me.txtEstilo.TabIndex = 11
         '
         'cbMarca
         '
+        resources.ApplyResources(Me.cbMarca, "cbMarca")
         Me.cbMarca.FormattingEnabled = True
-        Me.cbMarca.Location = New System.Drawing.Point(78, 25)
         Me.cbMarca.Name = "cbMarca"
-        Me.cbMarca.Size = New System.Drawing.Size(121, 21)
-        Me.cbMarca.TabIndex = 10
         '
         'txtModelo
         '
-        Me.txtModelo.Location = New System.Drawing.Point(78, 131)
+        resources.ApplyResources(Me.txtModelo, "txtModelo")
         Me.txtModelo.Name = "txtModelo"
-        Me.txtModelo.Size = New System.Drawing.Size(121, 20)
-        Me.txtModelo.TabIndex = 9
         '
         'Label9
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(6, 245)
+        resources.ApplyResources(Me.Label9, "Label9")
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(58, 13)
-        Me.Label9.TabIndex = 8
-        Me.Label9.Text = "Kilometraje"
         '
         'Label8
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(6, 216)
+        resources.ApplyResources(Me.Label8, "Label8")
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(63, 13)
-        Me.Label8.TabIndex = 7
-        Me.Label8.Text = "Transmisión"
         '
         'Label7
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(6, 106)
+        resources.ApplyResources(Me.Label7, "Label7")
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(31, 13)
-        Me.Label7.TabIndex = 6
-        Me.Label7.Text = "Color"
         '
         'Label6
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(6, 189)
+        resources.ApplyResources(Me.Label6, "Label6")
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(43, 13)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Precio()"
         '
         'Label5
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 79)
+        resources.ApplyResources(Me.Label5, "Label5")
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(26, 13)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Año"
         '
         'Label4
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 56)
+        resources.ApplyResources(Me.Label4, "Label4")
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(32, 13)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Estilo"
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 166)
+        resources.ApplyResources(Me.Label3, "Label3")
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(53, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Cilindrada"
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 135)
+        resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(42, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Modelo"
         '
         'Label1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 25)
+        resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(37, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Marca"
         '
         'GroupBox2
         '
+        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
+        Me.GroupBox2.Controls.Add(Me.txtAnoBusqueda)
+        Me.GroupBox2.Controls.Add(Me.btnLimpiarBusqueda)
         Me.GroupBox2.Controls.Add(Me.btbBuscar)
         Me.GroupBox2.Controls.Add(Me.Label12)
-        Me.GroupBox2.Controls.Add(Me.txtAnoBusqueda)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.txtMarcaBusqueda)
         Me.GroupBox2.Controls.Add(Me.dgvListaAutos)
-        Me.GroupBox2.Location = New System.Drawing.Point(294, 12)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(449, 409)
-        Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Busqueda "
+        '
+        'txtAnoBusqueda
+        '
+        resources.ApplyResources(Me.txtAnoBusqueda, "txtAnoBusqueda")
+        Me.txtAnoBusqueda.Maximum = New Decimal(New Integer() {3000, 0, 0, 0})
+        Me.txtAnoBusqueda.Minimum = New Decimal(New Integer() {1900, 0, 0, 0})
+        Me.txtAnoBusqueda.Name = "txtAnoBusqueda"
+        Me.txtAnoBusqueda.Value = New Decimal(New Integer() {1900, 0, 0, 0})
+        '
+        'btnLimpiarBusqueda
+        '
+        resources.ApplyResources(Me.btnLimpiarBusqueda, "btnLimpiarBusqueda")
+        Me.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda"
+        Me.btnLimpiarBusqueda.UseVisualStyleBackColor = True
         '
         'btbBuscar
         '
-        Me.btbBuscar.Location = New System.Drawing.Point(361, 16)
+        resources.ApplyResources(Me.btbBuscar, "btbBuscar")
         Me.btbBuscar.Name = "btbBuscar"
-        Me.btbBuscar.Size = New System.Drawing.Size(75, 23)
-        Me.btbBuscar.TabIndex = 21
-        Me.btbBuscar.Text = "Buscar"
         Me.btbBuscar.UseVisualStyleBackColor = True
         '
         'Label12
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(191, 21)
+        resources.ApplyResources(Me.Label12, "Label12")
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(26, 13)
-        Me.Label12.TabIndex = 22
-        Me.Label12.Text = "Año"
-        '
-        'txtAnoBusqueda
-        '
-        Me.txtAnoBusqueda.Location = New System.Drawing.Point(234, 18)
-        Me.txtAnoBusqueda.Name = "txtAnoBusqueda"
-        Me.txtAnoBusqueda.Size = New System.Drawing.Size(121, 20)
-        Me.txtAnoBusqueda.TabIndex = 23
         '
         'Label11
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(19, 21)
+        resources.ApplyResources(Me.Label11, "Label11")
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(37, 13)
-        Me.Label11.TabIndex = 21
-        Me.Label11.Text = "Marca"
         '
         'txtMarcaBusqueda
         '
-        Me.txtMarcaBusqueda.Location = New System.Drawing.Point(62, 18)
+        resources.ApplyResources(Me.txtMarcaBusqueda, "txtMarcaBusqueda")
         Me.txtMarcaBusqueda.Name = "txtMarcaBusqueda"
-        Me.txtMarcaBusqueda.Size = New System.Drawing.Size(121, 20)
-        Me.txtMarcaBusqueda.TabIndex = 21
         '
         'dgvListaAutos
         '
+        resources.ApplyResources(Me.dgvListaAutos, "dgvListaAutos")
         Me.dgvListaAutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvListaAutos.Location = New System.Drawing.Point(6, 44)
         Me.dgvListaAutos.Name = "dgvListaAutos"
-        Me.dgvListaAutos.Size = New System.Drawing.Size(437, 359)
-        Me.dgvListaAutos.TabIndex = 0
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(21, 352)
+        resources.ApplyResources(Me.PictureBox1, "PictureBox1")
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(267, 51)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
-        '
-        'cbTransmision
-        '
-        Me.cbTransmision.FormattingEnabled = True
-        Me.cbTransmision.Items.AddRange(New Object() {"Manual", "Automatico"})
-        Me.cbTransmision.Location = New System.Drawing.Point(78, 213)
-        Me.cbTransmision.Name = "cbTransmision"
-        Me.cbTransmision.Size = New System.Drawing.Size(121, 21)
-        Me.cbTransmision.TabIndex = 21
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(755, 430)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.ShowIcon = False
-        Me.Text = "Cr Autos"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.txtAnoBusqueda, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvListaAutos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -362,10 +313,7 @@ Partial Class Form1
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents txtPrecio As TextBox
-    Friend WithEvents txtCilindrada As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents txtKilometraje As TextBox
     Friend WithEvents txtColor As TextBox
     Friend WithEvents cbAno As ComboBox
     Friend WithEvents txtEstilo As TextBox
@@ -383,10 +331,18 @@ Partial Class Form1
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents btbBuscar As Button
     Friend WithEvents Label12 As Label
-    Friend WithEvents txtAnoBusqueda As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents txtMarcaBusqueda As TextBox
     Friend WithEvents dgvListaAutos As DataGridView
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents cbTransmision As ComboBox
+    Friend WithEvents txtPrecio As TextBox
+    Friend WithEvents txtCilindrada As TextBox
+    Friend WithEvents txtKilometraje As TextBox
+    Friend WithEvents cbCombustible As ComboBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents btnLimpiarBusqueda As Button
+    Friend WithEvents txtAnoBusqueda As NumericUpDown
 End Class
