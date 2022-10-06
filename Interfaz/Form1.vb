@@ -13,6 +13,7 @@ Public Class Form1
 
         ' Agregado temporal de datos en el modulo
         listaAutos.Add(DATA.autoEjemplo)
+        listaAutos.Add(DATA.autoEjemplo1)
 
         CargarDatos()
 
@@ -108,30 +109,55 @@ Public Class Form1
     End Sub
 
     Private Sub btbBuscar_Click(sender As Object, e As EventArgs) Handles btbBuscar.Click
-        Dim marcaABuscar As String = txtMarcaBusqueda.Text
-        Dim añoABuscar As Integer = txtAnoBusqueda.Value
+        Try
+            Dim marcaABuscar As String = txtMarcaBusqueda.Text
+            Dim añoABuscar As String = txtAnoBusqueda.Text
+            If String.IsNullOrEmpty(marcaABuscar) And String.IsNullOrEmpty(añoABuscar.ToString()) Then
+                MessageBox.Show("No hay datos para buscar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Else
+                Dim listaTmp As New List(Of Auto)
+                If Not String.IsNullOrEmpty(marcaABuscar) And Not String.IsNullOrEmpty(añoABuscar) Then
+                    ' no se logro usando linq
+                    listaTmp = listaAutos.Where(Function(d) d.Marca.Contains(marcaABuscar) And d.Año.ToString() = añoABuscar).ToList()
+
+                ElseIf String.IsNullOrEmpty(marcaABuscar) And Not String.IsNullOrEmpty(añoABuscar.ToString()) Then
+
+                    listaTmp = listaAutos.Where(Function(d) d.Año.ToString() = añoABuscar).ToList()
+
+                ElseIf Not String.IsNullOrEmpty(marcaABuscar) And String.IsNullOrEmpty(añoABuscar.ToString()) Then
+
+                    listaTmp = (From carro In DATA.listaAutos Select carro).Where(Function(carro) carro.Marca = marcaABuscar).ToList()
 
 
-
-        If String.IsNullOrEmpty(marcaABuscar) And String.IsNullOrEmpty(añoABuscar.ToString()) Then
-            MessageBox.Show("No hay datos para buscar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        Else
-            Dim listaTmp As New List(Of Auto)
-            If Not String.IsNullOrEmpty(marcaABuscar) And Not String.IsNullOrEmpty(añoABuscar) Then
-                listaTmp = From autos In DATA.listaAutos.ToList()
-                           Where autos.Año = añoABuscar And autos.Marca = marcaABuscar
-                           Select autos
-            ElseIf String.IsNullOrEmpty(marcaABuscar) And Not String.IsNullOrEmpty(añoABuscar.ToString()) Then
-                listaTmp = From autos In DATA.listaAutos.ToList()
-                           Where autos.Año = añoABuscar
-                           Select autos
-            ElseIf Not String.IsNullOrEmpty(marcaABuscar) And String.IsNullOrEmpty(añoABuscar.ToString()) Then
-                listaTmp = From autos In DATA.listaAutos.ToList()
-                           Where autos.Marca = marcaABuscar
-                           Select autos
-
+                End If
+                Dim table As New DataTable
+                ' definitions of the columns
+                table.Columns.Add("Marca")
+                table.Columns.Add("Modelo")
+                table.Columns.Add("Año")
+                table.Columns.Add("Color")
+                table.Columns.Add("Estilo")
+                table.Columns.Add("Cilindrada")
+                table.Columns.Add("Transmision")
+                table.Columns.Add("Combustible")
+                table.Columns.Add("Kilometraje")
+                table.Columns.Add("Precio")
+                'Verificamos canidad de autos
+                If listaTmp.Count > 0 Then
+                    ' limpieza de columnas
+                    dgvListaAutos.Columns.Clear()
+                    For Each obj As Auto In listaTmp
+                        table.Rows.Add(obj.Marca, obj.Modelo, obj.Año, obj.Color, obj.Estilo, obj.Cilindrada, obj.Transmision, obj.Combustible, obj.Kilometraje, obj.Precio)
+                    Next
+                    dgvListaAutos.DataSource = table
+                    MessageBox.Show("Busqueda realizada", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("No hay datos cargados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
             End If
-        End If
+        Catch ex As Exception
+            MessageBox.Show("Error:" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub btnLimpiarBusqueda_Click(sender As Object, e As EventArgs) Handles btnLimpiarBusqueda.Click

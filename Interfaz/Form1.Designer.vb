@@ -50,7 +50,6 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.txtAnoBusqueda = New System.Windows.Forms.NumericUpDown()
         Me.btnLimpiarBusqueda = New System.Windows.Forms.Button()
         Me.btbBuscar = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -58,16 +57,15 @@ Partial Class Form1
         Me.txtMarcaBusqueda = New System.Windows.Forms.TextBox()
         Me.dgvListaAutos = New System.Windows.Forms.DataGridView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.txtAnoBusqueda = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.txtAnoBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvListaAutos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Controls.Add(Me.cbCombustible)
@@ -93,6 +91,7 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.TabStop = False
         '
@@ -108,9 +107,9 @@ Partial Class Form1
         '
         'cbCombustible
         '
-        resources.ApplyResources(Me.cbCombustible, "cbCombustible")
         Me.cbCombustible.FormattingEnabled = True
         Me.cbCombustible.Items.AddRange(New Object() {resources.GetString("cbCombustible.Items"), resources.GetString("cbCombustible.Items1")})
+        resources.ApplyResources(Me.cbCombustible, "cbCombustible")
         Me.cbCombustible.Name = "cbCombustible"
         '
         'Label13
@@ -120,9 +119,9 @@ Partial Class Form1
         '
         'cbTransmision
         '
-        resources.ApplyResources(Me.cbTransmision, "cbTransmision")
         Me.cbTransmision.FormattingEnabled = True
         Me.cbTransmision.Items.AddRange(New Object() {resources.GetString("cbTransmision.Items"), resources.GetString("cbTransmision.Items1")})
+        resources.ApplyResources(Me.cbTransmision, "cbTransmision")
         Me.cbTransmision.Name = "cbTransmision"
         '
         'btnLimpiar
@@ -164,8 +163,8 @@ Partial Class Form1
         '
         'cbAno
         '
-        resources.ApplyResources(Me.cbAno, "cbAno")
         Me.cbAno.FormattingEnabled = True
+        resources.ApplyResources(Me.cbAno, "cbAno")
         Me.cbAno.Name = "cbAno"
         '
         'txtEstilo
@@ -175,8 +174,8 @@ Partial Class Form1
         '
         'cbMarca
         '
-        resources.ApplyResources(Me.cbMarca, "cbMarca")
         Me.cbMarca.FormattingEnabled = True
+        resources.ApplyResources(Me.cbMarca, "cbMarca")
         Me.cbMarca.Name = "cbMarca"
         '
         'txtModelo
@@ -231,7 +230,6 @@ Partial Class Form1
         '
         'GroupBox2
         '
-        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
         Me.GroupBox2.Controls.Add(Me.txtAnoBusqueda)
         Me.GroupBox2.Controls.Add(Me.btnLimpiarBusqueda)
         Me.GroupBox2.Controls.Add(Me.btbBuscar)
@@ -239,16 +237,9 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.txtMarcaBusqueda)
         Me.GroupBox2.Controls.Add(Me.dgvListaAutos)
+        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.TabStop = False
-        '
-        'txtAnoBusqueda
-        '
-        resources.ApplyResources(Me.txtAnoBusqueda, "txtAnoBusqueda")
-        Me.txtAnoBusqueda.Maximum = New Decimal(New Integer() {3000, 0, 0, 0})
-        Me.txtAnoBusqueda.Minimum = New Decimal(New Integer() {1900, 0, 0, 0})
-        Me.txtAnoBusqueda.Name = "txtAnoBusqueda"
-        Me.txtAnoBusqueda.Value = New Decimal(New Integer() {1900, 0, 0, 0})
         '
         'btnLimpiarBusqueda
         '
@@ -279,8 +270,8 @@ Partial Class Form1
         '
         'dgvListaAutos
         '
-        resources.ApplyResources(Me.dgvListaAutos, "dgvListaAutos")
         Me.dgvListaAutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        resources.ApplyResources(Me.dgvListaAutos, "dgvListaAutos")
         Me.dgvListaAutos.Name = "dgvListaAutos"
         '
         'PictureBox1
@@ -288,6 +279,11 @@ Partial Class Form1
         resources.ApplyResources(Me.PictureBox1, "PictureBox1")
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.TabStop = False
+        '
+        'txtAnoBusqueda
+        '
+        resources.ApplyResources(Me.txtAnoBusqueda, "txtAnoBusqueda")
+        Me.txtAnoBusqueda.Name = "txtAnoBusqueda"
         '
         'Form1
         '
@@ -303,7 +299,6 @@ Partial Class Form1
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.txtAnoBusqueda, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvListaAutos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -344,5 +339,5 @@ Partial Class Form1
     Friend WithEvents Label15 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents btnLimpiarBusqueda As Button
-    Friend WithEvents txtAnoBusqueda As NumericUpDown
+    Friend WithEvents txtAnoBusqueda As TextBox
 End Class
