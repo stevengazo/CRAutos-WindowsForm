@@ -4,7 +4,7 @@ Imports System.Linq
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbMarca.Items.AddRange(DATA.listaMarcas)
-
+        cbEstilo.Items.AddRange(DATA.listaEstilos)
         ' Muestra los ultimos 10 años y el proximo año
         Dim año As Integer = DateTime.Today.Year + 1
         For index = (año - 10) To (año)
@@ -28,7 +28,7 @@ Public Class Form1
             txtModelo.Text = String.Empty
             txtKilometraje.Text = String.Empty
             txtColor.Text = String.Empty
-            txtEstilo.Text = String.Empty
+            cbEstilo.SelectedIndex = -1
             txtPrecio.Text = String.Empty
         Catch ex As Exception
             MessageBox.Show("Error en limpieza: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -38,7 +38,7 @@ Public Class Form1
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
             Dim marca As String = cbMarca.Text
-            Dim estilo As String = txtEstilo.Text
+            Dim estilo As String = cbEstilo.Text
             Dim añotmp As String = cbAno.Text
             Dim color As String = txtColor.Text
             Dim modelo As String = txtModelo.Text

@@ -37,7 +37,6 @@ Partial Class Form1
         Me.txtKilometraje = New System.Windows.Forms.TextBox()
         Me.txtColor = New System.Windows.Forms.TextBox()
         Me.cbAno = New System.Windows.Forms.ComboBox()
-        Me.txtEstilo = New System.Windows.Forms.TextBox()
         Me.cbMarca = New System.Windows.Forms.ComboBox()
         Me.txtModelo = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -50,6 +49,7 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtAnoBusqueda = New System.Windows.Forms.TextBox()
         Me.btnLimpiarBusqueda = New System.Windows.Forms.Button()
         Me.btbBuscar = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -57,7 +57,7 @@ Partial Class Form1
         Me.txtMarcaBusqueda = New System.Windows.Forms.TextBox()
         Me.dgvListaAutos = New System.Windows.Forms.DataGridView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.txtAnoBusqueda = New System.Windows.Forms.TextBox()
+        Me.cbEstilo = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvListaAutos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,6 +66,7 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cbEstilo)
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Controls.Add(Me.cbCombustible)
@@ -79,7 +80,6 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.txtKilometraje)
         Me.GroupBox1.Controls.Add(Me.txtColor)
         Me.GroupBox1.Controls.Add(Me.cbAno)
-        Me.GroupBox1.Controls.Add(Me.txtEstilo)
         Me.GroupBox1.Controls.Add(Me.cbMarca)
         Me.GroupBox1.Controls.Add(Me.txtModelo)
         Me.GroupBox1.Controls.Add(Me.Label9)
@@ -167,11 +167,6 @@ Partial Class Form1
         resources.ApplyResources(Me.cbAno, "cbAno")
         Me.cbAno.Name = "cbAno"
         '
-        'txtEstilo
-        '
-        resources.ApplyResources(Me.txtEstilo, "txtEstilo")
-        Me.txtEstilo.Name = "txtEstilo"
-        '
         'cbMarca
         '
         Me.cbMarca.FormattingEnabled = True
@@ -241,6 +236,11 @@ Partial Class Form1
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.TabStop = False
         '
+        'txtAnoBusqueda
+        '
+        resources.ApplyResources(Me.txtAnoBusqueda, "txtAnoBusqueda")
+        Me.txtAnoBusqueda.Name = "txtAnoBusqueda"
+        '
         'btnLimpiarBusqueda
         '
         resources.ApplyResources(Me.btnLimpiarBusqueda, "btnLimpiarBusqueda")
@@ -280,10 +280,11 @@ Partial Class Form1
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.TabStop = False
         '
-        'txtAnoBusqueda
+        'cbEstilo
         '
-        resources.ApplyResources(Me.txtAnoBusqueda, "txtAnoBusqueda")
-        Me.txtAnoBusqueda.Name = "txtAnoBusqueda"
+        Me.cbEstilo.FormattingEnabled = True
+        resources.ApplyResources(Me.cbEstilo, "cbEstilo")
+        Me.cbEstilo.Name = "cbEstilo"
         '
         'Form1
         '
@@ -311,7 +312,6 @@ Partial Class Form1
     Friend WithEvents Label10 As Label
     Friend WithEvents txtColor As TextBox
     Friend WithEvents cbAno As ComboBox
-    Friend WithEvents txtEstilo As TextBox
     Friend WithEvents cbMarca As ComboBox
     Friend WithEvents txtModelo As TextBox
     Friend WithEvents Label9 As Label
@@ -340,4 +340,5 @@ Partial Class Form1
     Friend WithEvents Label14 As Label
     Friend WithEvents btnLimpiarBusqueda As Button
     Friend WithEvents txtAnoBusqueda As TextBox
+    Friend WithEvents cbEstilo As ComboBox
 End Class
