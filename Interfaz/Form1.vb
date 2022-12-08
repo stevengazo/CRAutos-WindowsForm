@@ -7,21 +7,29 @@ Imports System.Threading
 
 Public Class Form1
     Dim NegociosColor As New Negocios.Color
+    Dim NegociosEstilo As New Negocios.Estilo
+    Dim NegociosMarca As New Negocios.Marca
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cbMarca.Items.AddRange(DATA.listaMarcas)
-        cbEstilo.Items.AddRange(DATA.listaEstilos)
         ' Muestra los ultimos 10 años y el proximo año
         Dim año As Integer = DateTime.Today.Year + 1
         For index = (año - 10) To (año)
             cbAno.Items.Add(index)
         Next
-
         Dim listaColores As New List(Of Objetos.Color)
         listaColores = NegociosColor.ListarColores()
         For Each color As Objetos.Color In listaColores
             cbColores.Items.Add(color.Nombre)
         Next
-
+        Dim listaEstilos As New List(Of Objetos.Estilo)
+        listaEstilos = NegociosEstilo.ListarEstilos()
+        For Each estilo As Objetos.Estilo In listaEstilos
+            cbEstilo.Items.Add(estilo.Nombre)
+        Next
+        Dim listaMarcas As New List(Of Objetos.Marca)
+        listaMarcas = NegociosMarca.ListarMarcas()
+        For Each marca As Objetos.Marca In listaMarcas
+            cbMarca.Items.Add(marca.Nombre)
+        Next
 
         ' Agregado temporal de datos en el modulo
         'listaAutos.Add(DATA.autoEjemplo)
@@ -78,7 +86,6 @@ Public Class Form1
                 .Transmision = transmision,
                 .Año = año
             }
-            DATA.listaAutos.Add(tmpAuto)
             CargarDatos()
             MessageBox.Show("Vehiculo Agregado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
