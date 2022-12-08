@@ -1,10 +1,76 @@
 ﻿Imports Objetos
 Imports System.Data.SqlClient
 Imports System.Net.Http.Headers
+Imports System.Runtime.InteropServices.WindowsRuntime
 
 Public Class Automovil
     Dim conexion As New SqlConnection(GENERALES.DBCRAutos)
 
+
+
+    ''' <summary>
+    ''' Busca y elimina un auto de la DB
+    ''' </summary>
+    ''' <param name="idAuto">identificador del auto</param>
+    ''' <returns>0 si no hay errores</returns>
+    Public Function BorrarAuto(idAuto As Integer) As Integer
+        Try
+            Dim _comando As New SqlCommand()
+            _comando.CommandText = "[dbo].[EliminarAuto]"
+            _comando.CommandType = CommandType.StoredProcedure
+            _comando.Connection = conexion
+            'son parametros de entrada
+            _comando.Parameters.Add("@idAutoMovil", SqlDbType.Int).Value = idAuto
+            'agregar los parametros de salida
+            _comando.Parameters.Add("@ErrorMessage", SqlDbType.VarChar, 255).Direction = ParameterDirection.Output
+            _comando.Parameters.Add("@ErrorCode", SqlDbType.Int).Direction = ParameterDirection.Output
+
+            conexion.Open()
+            _comando.ExecuteNonQuery()
+            conexion.Close()
+            If _comando.Parameters("@ErrorCode").Value = 0 Then
+                Return 0
+            Else
+                Return _comando.Parameters("@ErrorCode").Value
+            End If
+        Catch ex As Exception
+            Return 1
+        End Try
+    End Function
+    Public Function InsertarAuto(auto As Objetos.Automovil) As Integer
+        Try
+            Dim idAuto As Integer = 0
+            Dim _comando As New SqlCommand()
+            _comando.CommandText = "[dbo].[AgregarAutomovil]"
+            _comando.CommandType = CommandType.StoredProcedure
+            _comando.Connection = conexion
+            'son parametros de entrada
+            _comando.Parameters.Add("@idMarca", SqlDbType.Int).Value = auto.idMarca
+            _comando.Parameters.Add("@idEstilo", SqlDbType.Int).Value = auto.idEstilo
+            _comando.Parameters.Add("@idColor", SqlDbType.Int).Value = auto.idcolor
+            _comando.Parameters.Add("@Modelo", SqlDbType.VarChar, 30).Value = auto.Modelo
+            _comando.Parameters.Add("@Año", SqlDbType.Int).Value = auto.Año
+            _comando.Parameters.Add("@Cilindrada", SqlDbType.Int).Value = auto.Cilindrada
+            _comando.Parameters.Add("@Precio", SqlDbType.Float).Value = auto.Precio
+            _comando.Parameters.Add("@Transmision", SqlDbType.VarChar, 30).Value = auto.Transmision
+            _comando.Parameters.Add("@Combustible", SqlDbType.VarChar, 15).Value = auto.Combustible
+            _comando.Parameters.Add("@Kilometraje", SqlDbType.Int).Value = auto.Kilometraje
+            'agregar los parametros de salida
+            _comando.Parameters.Add("@ErrorMessage", SqlDbType.VarChar, 255).Direction = ParameterDirection.Output
+            _comando.Parameters.Add("@ErrorCode", SqlDbType.Int).Direction = ParameterDirection.Output
+            _comando.Parameters.Add("@idAutoMovil", SqlDbType.Int).Direction = ParameterDirection.Output
+            conexion.Open()
+            _comando.ExecuteNonQuery()
+            conexion.Close()
+            If _comando.Parameters("@ErrorCode").Value = 0 Then
+                Return _comando.Parameters("@idAutoMovil").Value
+            Else
+                Return 0
+            End If
+        Catch ex As Exception
+            Return 0
+        End Try
+    End Function
     Public Function ListarAutos() As List(Of Objetos.Automovil)
         Try
             Dim _dataSet As New DataSet()

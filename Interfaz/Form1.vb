@@ -9,23 +9,28 @@ Public Class Form1
     Dim NegociosColor As New Negocios.Color
     Dim NegociosEstilo As New Negocios.Estilo
     Dim NegociosMarca As New Negocios.Marca
+    Dim NegocioAuto As New Negocios.Automovil
+
+    Dim listaColores As New List(Of Objetos.Color)
+    Dim listaMarcas As New List(Of Objetos.Marca)
+    Dim listaEstilos As New List(Of Objetos.Estilo)
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Muestra los ultimos 10 años y el proximo año
         Dim año As Integer = DateTime.Today.Year + 1
         For index = (año - 10) To (año)
             cbAno.Items.Add(index)
         Next
-        Dim listaColores As New List(Of Objetos.Color)
+
         listaColores = NegociosColor.ListarColores()
         For Each color As Objetos.Color In listaColores
             cbColores.Items.Add(color.Nombre)
         Next
-        Dim listaEstilos As New List(Of Objetos.Estilo)
+
         listaEstilos = NegociosEstilo.ListarEstilos()
         For Each estilo As Objetos.Estilo In listaEstilos
             cbEstilo.Items.Add(estilo.Nombre)
         Next
-        Dim listaMarcas As New List(Of Objetos.Marca)
+
         listaMarcas = NegociosMarca.ListarMarcas()
         For Each marca As Objetos.Marca In listaMarcas
             cbMarca.Items.Add(marca.Nombre)
@@ -57,39 +62,58 @@ Public Class Form1
 
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Try
+            Dim auto As New Objetos.Automovil()
             Dim marca As String = cbMarca.Text
             Dim estilo As String = cbEstilo.Text
-            Dim añotmp As String = cbAno.Text
             Dim color As String = cbColores.Text
-            Dim modelo As String = txtModelo.Text
-            Dim cilindradatmp As String = txtCilindrada.Text
-            Dim preciotmp As String = txtPrecio.Text
-            Dim transmision As String = cbTransmision.Text
-            Dim kilometrajetmp As String = txtKilometraje.Text
-            Dim combustible As String = cbCombustible.Text
 
-            'Conversion de datos
-            Dim precio As Double = Double.Parse(preciotmp)
-            Dim kilimetraje As Integer = Integer.Parse(kilometrajetmp)
-            Dim cilindrada As Integer = Integer.Parse(cilindrada)
-            Dim año As Integer = Integer.Parse(añotmp)
+            For Each _marca As Objetos.Marca In listaMarcas
+                If _marca.Nombre.Equals(marca) Then
+                    auto.idMarca = _marca.idMarca
+                    auto.Marca = _marca
+                    Exit For
+                Else
+                    auto.idMarca = 0
+                End If
+            Next
 
-            'Asignacion de valores
-            Dim tmpAuto As New Auto With {.Cilindrada = cilindrada,
-                .Color = color,
-                .Combustible = combustible,
-                .Estilo = estilo,
-                .Kilometraje = kilometrajetmp,
-                .Marca = marca,
-                .Modelo = modelo,
-                .Precio = precio,
-                .Transmision = transmision,
-                .Año = año
-            }
-            CargarDatos()
-            MessageBox.Show("Vehiculo Agregado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            For Each _color As Objetos.Color In listaColores
+                If _color.Nombre.Equals(color) Then
+                    auto.idcolor = _color.idColor
+                    auto.Color = _color
+                    Exit For
+                Else
+                    auto.idcolor = 0
+                End If
+            Next
+            For Each _estilo As Objetos.Estilo In listaEstilos
+                If _estilo.Nombre.Equals(estilo) Then
+                    auto.idEstilo = _estilo.idEstilo
+                    auto.Estilo = _estilo
+                    Exit For
+                Else
+                    auto.idEstilo = 0
+                End If
+            Next
+            auto.Año = Integer.Parse(cbAno.Text)
+            auto.Modelo = txtModelo.Text
+            auto.Cilindrada = Integer.Parse(txtCilindrada.Text)
+            auto.Precio = Double.Parse(txtPrecio.Text)
+            auto.Transmision = cbTransmision.Text
+            auto.Kilometraje = Integer.Parse(txtKilometraje.Text)
+            auto.Combustible = cbCombustible.Text
+
+            Dim bandera As Boolean = NegocioAuto.AgregarAuto(auto)
+            If bandera Then
+                CargarDatos()
+                MessageBox.Show("Vehiculo Agregado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Error en Agregar auto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+
+
         Catch ex As Exception
-            MessageBox.Show("Error en Agregar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
         End Try
     End Sub
     ''' <summary>
@@ -99,6 +123,7 @@ Public Class Form1
         ' instacia de datatable
         Dim table As New DataTable
         ' definitions of the columns
+        table.Columns.Add("id")
         table.Columns.Add("Marca")
         table.Columns.Add("Modelo")
         table.Columns.Add("Año")
@@ -122,73 +147,51 @@ Public Class Form1
             dgvListaAutos.Columns.Clear()
 
             For Each obj As Objetos.Automovil In _listaAutos
-                table.Rows.Add(obj.Marca.Nombre, obj.Modelo, obj.Año.ToString(), obj.Color.Nombre, obj.Estilo.Nombre, obj.Cilindrada.ToString(), obj.Transmision.ToString(), obj.Combustible.ToString(), obj.Kilometraje.ToString(), obj.Precio.ToString())
+                table.Rows.Add(obj.idAutomovil, obj.Marca.Nombre, obj.Modelo, obj.Año.ToString(), obj.Color.Nombre, obj.Estilo.Nombre, obj.Cilindrada.ToString(), obj.Transmision.ToString(), obj.Combustible.ToString(), obj.Kilometraje.ToString(), obj.Precio.ToString())
             Next
             dgvListaAutos.DataSource = table
+
+            'agregar un boton por cada fila que exista en la tabla
+            Dim btn As New DataGridViewButtonColumn
+            btn.HeaderText = "Borrar"
+            btn.Text = "Borrar"
+            btn.Name = "Borrar"
+            btn.UseColumnTextForButtonValue = True
+
+            dgvListaAutos.Columns.Add(btn)
+
+
         Else
             ' MessageBox.Show("No hay datos cargados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
-    Private Sub btbBuscar_Click(sender As Object, e As EventArgs) Handles btbBuscar.Click
+
+
+    Private Sub btnLimpiarBusqueda_Click(sender As Object, e As EventArgs)
         Try
-            Dim marcaABuscar As String = txtMarcaBusqueda.Text
-            Dim añoABuscar As String = txtAnoBusqueda.Text
-            If String.IsNullOrEmpty(marcaABuscar) And String.IsNullOrEmpty(añoABuscar.ToString()) Then
-                MessageBox.Show("No hay datos para buscar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Else
-                Dim listaTmp As New List(Of Auto)
-                If Not String.IsNullOrEmpty(marcaABuscar) And Not String.IsNullOrEmpty(añoABuscar) Then
-                    ' no se logro usando linq
-                    listaTmp = listaAutos.Where(Function(d) d.Marca = marcaABuscar And d.Año.ToString() = añoABuscar).ToList()
 
-                ElseIf String.IsNullOrEmpty(marcaABuscar) And Not String.IsNullOrEmpty(añoABuscar.ToString()) Then
-
-                    listaTmp = listaAutos.Where(Function(d) d.Año.ToString() = añoABuscar).ToList()
-
-                ElseIf Not String.IsNullOrEmpty(marcaABuscar) And String.IsNullOrEmpty(añoABuscar.ToString()) Then
-                    listaTmp = (From carro In DATA.listaAutos Select carro).Where(Function(carro) carro.Marca.ToUpper() = marcaABuscar.ToUpper()).ToList()
-                End If
-                Dim table As New DataTable
-                ' definitions of the columns
-                table.Columns.Add("Marca")
-                table.Columns.Add("Modelo")
-                table.Columns.Add("Año")
-                table.Columns.Add("Color")
-                table.Columns.Add("Estilo")
-                table.Columns.Add("Cilindrada")
-                table.Columns.Add("Transmision")
-                table.Columns.Add("Combustible")
-                table.Columns.Add("Kilometraje")
-                table.Columns.Add("Precio")
-                'Verificamos canidad de autos
-                If listaTmp.Count > 0 Then
-                    ' limpieza de columnas
-                    dgvListaAutos.Columns.Clear()
-                    For Each obj As Auto In listaTmp
-                        table.Rows.Add(obj.Marca, obj.Modelo, obj.Año, obj.Color, obj.Estilo, obj.Cilindrada, obj.Transmision, obj.Combustible, obj.Kilometraje, obj.Precio)
-                    Next
-                    dgvListaAutos.DataSource = table
-                    'MessageBox.Show("Busqueda realizada", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    MessageBox.Show("No hay coincidencias", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Error:" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
-
-    Private Sub btnLimpiarBusqueda_Click(sender As Object, e As EventArgs) Handles btnLimpiarBusqueda.Click
-        Try
-            txtAnoBusqueda.Text = String.Empty
-            txtMarcaBusqueda.Text = String.Empty
             CargarDatos()
         Catch ex As Exception
             MessageBox.Show("Error en LimpiarBusqueda: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
 
+    End Sub
+
+
+    Private Sub dgvListaAutos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListaAutos.CellContentClick
+        If e.ColumnIndex = 11 Then
+            Dim row = dgvListaAutos.Rows(e.RowIndex)
+            Dim cells = row.Cells
+            Dim id = Integer.Parse(cells.Item(0).Value)
+            Dim bandera = NegocioAuto.BorrarAutomovil(id)
+            If bandera Then
+                CargarDatos()
+            Else
+                MessageBox.Show("Error al borrar auto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        End If
     End Sub
 
     Private Sub ImportarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImportarToolStripMenuItem.Click

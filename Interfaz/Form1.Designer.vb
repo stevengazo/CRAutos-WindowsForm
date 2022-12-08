@@ -24,6 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbColores = New System.Windows.Forms.ComboBox()
         Me.cbEstilo = New System.Windows.Forms.ComboBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -49,12 +50,6 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.txtAnoBusqueda = New System.Windows.Forms.TextBox()
-        Me.btnLimpiarBusqueda = New System.Windows.Forms.Button()
-        Me.btbBuscar = New System.Windows.Forms.Button()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtMarcaBusqueda = New System.Windows.Forms.TextBox()
         Me.dgvListaAutos = New System.Windows.Forms.DataGridView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -63,7 +58,6 @@ Partial Class Form1
         Me.ExportarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
-        Me.cbColores = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvListaAutos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,6 +95,11 @@ Partial Class Form1
         resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.TabStop = False
+        '
+        'cbColores
+        '
+        resources.ApplyResources(Me.cbColores, "cbColores")
+        Me.cbColores.Name = "cbColores"
         '
         'cbEstilo
         '
@@ -233,48 +232,10 @@ Partial Class Form1
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.txtAnoBusqueda)
-        Me.GroupBox2.Controls.Add(Me.btnLimpiarBusqueda)
-        Me.GroupBox2.Controls.Add(Me.btbBuscar)
-        Me.GroupBox2.Controls.Add(Me.Label12)
-        Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.txtMarcaBusqueda)
         Me.GroupBox2.Controls.Add(Me.dgvListaAutos)
         resources.ApplyResources(Me.GroupBox2, "GroupBox2")
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.TabStop = False
-        '
-        'txtAnoBusqueda
-        '
-        resources.ApplyResources(Me.txtAnoBusqueda, "txtAnoBusqueda")
-        Me.txtAnoBusqueda.Name = "txtAnoBusqueda"
-        '
-        'btnLimpiarBusqueda
-        '
-        resources.ApplyResources(Me.btnLimpiarBusqueda, "btnLimpiarBusqueda")
-        Me.btnLimpiarBusqueda.Name = "btnLimpiarBusqueda"
-        Me.btnLimpiarBusqueda.UseVisualStyleBackColor = True
-        '
-        'btbBuscar
-        '
-        resources.ApplyResources(Me.btbBuscar, "btbBuscar")
-        Me.btbBuscar.Name = "btbBuscar"
-        Me.btbBuscar.UseVisualStyleBackColor = True
-        '
-        'Label12
-        '
-        resources.ApplyResources(Me.Label12, "Label12")
-        Me.Label12.Name = "Label12"
-        '
-        'Label11
-        '
-        resources.ApplyResources(Me.Label11, "Label11")
-        Me.Label11.Name = "Label11"
-        '
-        'txtMarcaBusqueda
-        '
-        resources.ApplyResources(Me.txtMarcaBusqueda, "txtMarcaBusqueda")
-        Me.txtMarcaBusqueda.Name = "txtMarcaBusqueda"
         '
         'dgvListaAutos
         '
@@ -314,11 +275,6 @@ Partial Class Form1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'cbColores
-        '
-        resources.ApplyResources(Me.cbColores, "cbColores")
-        Me.cbColores.Name = "cbColores"
-        '
         'Form1
         '
         resources.ApplyResources(Me, "$this")
@@ -333,7 +289,6 @@ Partial Class Form1
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         CType(Me.dgvListaAutos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
@@ -360,10 +315,6 @@ Partial Class Form1
     Friend WithEvents btnLimpiar As Button
     Friend WithEvents btnAgregar As Button
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents btbBuscar As Button
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents txtMarcaBusqueda As TextBox
     Friend WithEvents dgvListaAutos As DataGridView
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents cbTransmision As ComboBox
@@ -374,8 +325,6 @@ Partial Class Form1
     Friend WithEvents Label13 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label14 As Label
-    Friend WithEvents btnLimpiarBusqueda As Button
-    Friend WithEvents txtAnoBusqueda As TextBox
     Friend WithEvents cbEstilo As ComboBox
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ArchivoToolStripMenuItem As ToolStripMenuItem

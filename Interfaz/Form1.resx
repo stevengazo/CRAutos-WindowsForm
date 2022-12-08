@@ -764,155 +764,11 @@
   <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="txtAnoBusqueda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>212, 19</value>
-  </data>
-  <data name="txtAnoBusqueda.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 20</value>
-  </data>
-  <data name="txtAnoBusqueda.TabIndex" type="System.Int32, mscorlib">
-    <value>26</value>
-  </data>
-  <data name="&gt;&gt;txtAnoBusqueda.Name" xml:space="preserve">
-    <value>txtAnoBusqueda</value>
-  </data>
-  <data name="&gt;&gt;txtAnoBusqueda.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtAnoBusqueda.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;txtAnoBusqueda.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnLimpiarBusqueda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>422, 16</value>
-  </data>
-  <data name="btnLimpiarBusqueda.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 23</value>
-  </data>
-  <data name="btnLimpiarBusqueda.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
-  </data>
-  <data name="btnLimpiarBusqueda.Text" xml:space="preserve">
-    <value>Limpiar</value>
-  </data>
-  <data name="&gt;&gt;btnLimpiarBusqueda.Name" xml:space="preserve">
-    <value>btnLimpiarBusqueda</value>
-  </data>
-  <data name="&gt;&gt;btnLimpiarBusqueda.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnLimpiarBusqueda.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;btnLimpiarBusqueda.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btbBuscar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 15</value>
-  </data>
-  <data name="btbBuscar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 23</value>
-  </data>
-  <data name="btbBuscar.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="btbBuscar.Text" xml:space="preserve">
-    <value>Buscar</value>
-  </data>
-  <data name="&gt;&gt;btbBuscar.Name" xml:space="preserve">
-    <value>btbBuscar</value>
-  </data>
-  <data name="&gt;&gt;btbBuscar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btbBuscar.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;btbBuscar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="Label12.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 21</value>
-  </data>
-  <data name="Label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 13</value>
-  </data>
-  <data name="Label12.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="Label12.Text" xml:space="preserve">
-    <value>Año</value>
-  </data>
-  <data name="&gt;&gt;Label12.Name" xml:space="preserve">
-    <value>Label12</value>
-  </data>
-  <data name="&gt;&gt;Label12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label12.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;Label12.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="Label11.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 21</value>
-  </data>
-  <data name="Label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
-  </data>
-  <data name="Label11.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="Label11.Text" xml:space="preserve">
-    <value>Marca</value>
-  </data>
-  <data name="&gt;&gt;Label11.Name" xml:space="preserve">
-    <value>Label11</value>
-  </data>
-  <data name="&gt;&gt;Label11.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label11.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;Label11.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="txtMarcaBusqueda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>51, 18</value>
-  </data>
-  <data name="txtMarcaBusqueda.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 20</value>
-  </data>
-  <data name="txtMarcaBusqueda.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;txtMarcaBusqueda.Name" xml:space="preserve">
-    <value>txtMarcaBusqueda</value>
-  </data>
-  <data name="&gt;&gt;txtMarcaBusqueda.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtMarcaBusqueda.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
-  </data>
-  <data name="&gt;&gt;txtMarcaBusqueda.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="dgvListaAutos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 44</value>
+    <value>6, 25</value>
   </data>
   <data name="dgvListaAutos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>535, 359</value>
+    <value>535, 378</value>
   </data>
   <data name="dgvListaAutos.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -927,7 +783,7 @@
     <value>GroupBox2</value>
   </data>
   <data name="&gt;&gt;dgvListaAutos.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>0</value>
   </data>
   <data name="GroupBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>294, 24</value>
@@ -939,7 +795,7 @@
     <value>1</value>
   </data>
   <data name="GroupBox2.Text" xml:space="preserve">
-    <value>Busqueda </value>
+    <value>Lista</value>
   </data>
   <data name="&gt;&gt;GroupBox2.Name" xml:space="preserve">
     <value>GroupBox2</value>
