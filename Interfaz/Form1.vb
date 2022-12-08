@@ -6,6 +6,7 @@ Imports Negocios
 Imports System.Threading
 
 Public Class Form1
+    Dim NegociosColor As New Negocios.Color
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbMarca.Items.AddRange(DATA.listaMarcas)
         cbEstilo.Items.AddRange(DATA.listaEstilos)
@@ -14,6 +15,13 @@ Public Class Form1
         For index = (año - 10) To (año)
             cbAno.Items.Add(index)
         Next
+
+        Dim listaColores As New List(Of Objetos.Color)
+        listaColores = NegociosColor.ListarColores()
+        For Each color As Objetos.Color In listaColores
+            cbColores.Items.Add(color.Nombre)
+        Next
+
 
         ' Agregado temporal de datos en el modulo
         'listaAutos.Add(DATA.autoEjemplo)
@@ -31,7 +39,7 @@ Public Class Form1
             txtCilindrada.Text = String.Empty
             txtModelo.Text = String.Empty
             txtKilometraje.Text = String.Empty
-            txtColor.Text = String.Empty
+            cbColores.Text = String.Empty
             cbEstilo.SelectedIndex = -1
             txtPrecio.Text = String.Empty
         Catch ex As Exception
@@ -44,7 +52,7 @@ Public Class Form1
             Dim marca As String = cbMarca.Text
             Dim estilo As String = cbEstilo.Text
             Dim añotmp As String = cbAno.Text
-            Dim color As String = txtColor.Text
+            Dim color As String = cbColores.Text
             Dim modelo As String = txtModelo.Text
             Dim cilindradatmp As String = txtCilindrada.Text
             Dim preciotmp As String = txtPrecio.Text

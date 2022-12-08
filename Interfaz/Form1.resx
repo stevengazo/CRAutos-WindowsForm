@@ -118,13 +118,34 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cbColores.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 106</value>
+  </data>
+  <data name="cbColores.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cbColores.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cbColores.Name" xml:space="preserve">
+    <value>cbColores</value>
+  </data>
+  <data name="&gt;&gt;cbColores.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbColores.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;cbColores.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="cbEstilo.Location" type="System.Drawing.Point, System.Drawing">
     <value>78, 52</value>
   </data>
   <data name="cbEstilo.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cbEstilo.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
   </data>
@@ -138,7 +159,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;cbEstilo.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="Label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -165,7 +186,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;Label15.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="Label14.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -192,7 +213,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;Label14.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbCombustible.Items" xml:space="preserve">
     <value>Diesel</value>
@@ -219,7 +240,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;cbCombustible.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="Label13.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -246,7 +267,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;Label13.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cbTransmision.Items" xml:space="preserve">
     <value>Manual</value>
@@ -273,7 +294,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;cbTransmision.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="btnLimpiar.Location" type="System.Drawing.Point, System.Drawing">
     <value>127, 298</value>
@@ -297,7 +318,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;btnLimpiar.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnAgregar.Location" type="System.Drawing.Point, System.Drawing">
     <value>30, 298</value>
@@ -321,7 +342,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;btnAgregar.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="txtPrecio.Location" type="System.Drawing.Point, System.Drawing">
     <value>79, 186</value>
@@ -342,7 +363,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;txtPrecio.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="txtCilindrada.Location" type="System.Drawing.Point, System.Drawing">
     <value>78, 159</value>
@@ -363,7 +384,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;txtCilindrada.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="Label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -390,7 +411,7 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;Label10.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="txtKilometraje.Location" type="System.Drawing.Point, System.Drawing">
     <value>78, 267</value>
@@ -411,27 +432,6 @@
     <value>GroupBox1</value>
   </data>
   <data name="&gt;&gt;txtKilometraje.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="txtColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 105</value>
-  </data>
-  <data name="txtColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 20</value>
-  </data>
-  <data name="txtColor.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;txtColor.Name" xml:space="preserve">
-    <value>txtColor</value>
-  </data>
-  <data name="&gt;&gt;txtColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtColor.Parent" xml:space="preserve">
-    <value>GroupBox1</value>
-  </data>
-  <data name="&gt;&gt;txtColor.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
   <data name="cbAno.Location" type="System.Drawing.Point, System.Drawing">

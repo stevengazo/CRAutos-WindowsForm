@@ -36,7 +36,6 @@ Partial Class Form1
         Me.txtCilindrada = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtKilometraje = New System.Windows.Forms.TextBox()
-        Me.txtColor = New System.Windows.Forms.TextBox()
         Me.cbAno = New System.Windows.Forms.ComboBox()
         Me.cbMarca = New System.Windows.Forms.ComboBox()
         Me.txtModelo = New System.Windows.Forms.TextBox()
@@ -64,6 +63,7 @@ Partial Class Form1
         Me.ExportarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.cbColores = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvListaAutos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,6 +73,7 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cbColores)
         Me.GroupBox1.Controls.Add(Me.cbEstilo)
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.Label14)
@@ -85,7 +86,6 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.txtCilindrada)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.txtKilometraje)
-        Me.GroupBox1.Controls.Add(Me.txtColor)
         Me.GroupBox1.Controls.Add(Me.cbAno)
         Me.GroupBox1.Controls.Add(Me.cbMarca)
         Me.GroupBox1.Controls.Add(Me.txtModelo)
@@ -168,11 +168,6 @@ Partial Class Form1
         '
         resources.ApplyResources(Me.txtKilometraje, "txtKilometraje")
         Me.txtKilometraje.Name = "txtKilometraje"
-        '
-        'txtColor
-        '
-        resources.ApplyResources(Me.txtColor, "txtColor")
-        Me.txtColor.Name = "txtColor"
         '
         'cbAno
         '
@@ -319,6 +314,11 @@ Partial Class Form1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'cbColores
+        '
+        resources.ApplyResources(Me.cbColores, "cbColores")
+        Me.cbColores.Name = "cbColores"
+        '
         'Form1
         '
         resources.ApplyResources(Me, "$this")
@@ -347,7 +347,6 @@ Partial Class Form1
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents txtColor As TextBox
     Friend WithEvents cbAno As ComboBox
     Friend WithEvents cbMarca As ComboBox
     Friend WithEvents txtModelo As TextBox
@@ -384,4 +383,5 @@ Partial Class Form1
     Friend WithEvents ExportarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents cbColores As ComboBox
 End Class

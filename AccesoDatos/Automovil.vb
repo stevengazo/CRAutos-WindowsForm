@@ -3,7 +3,7 @@ Imports System.Data.SqlClient
 Imports System.Net.Http.Headers
 
 Public Class Automovil
-    Dim conexion As New SqlConnection("Data Source=127.0.0.1;Initial Catalog=CRAutos;Persist Security Info=True;User ID=sa;Password=Password123")
+    Dim conexion As New SqlConnection(GENERALES.DBCRAutos)
 
     Public Function ListarAutos() As List(Of Objetos.Automovil)
         Try
