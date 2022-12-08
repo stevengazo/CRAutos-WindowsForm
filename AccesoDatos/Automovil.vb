@@ -19,7 +19,7 @@ Public Class Automovil
             _comando.CommandText = "[dbo].[EliminarAuto]"
             _comando.CommandType = CommandType.StoredProcedure
             _comando.Connection = conexion
-            'son parametros de entrada
+            'son parametros de entrada (envia el id al procedimiento)
             _comando.Parameters.Add("@idAutoMovil", SqlDbType.Int).Value = idAuto
             'agregar los parametros de salida
             _comando.Parameters.Add("@ErrorMessage", SqlDbType.VarChar, 255).Direction = ParameterDirection.Output
@@ -96,7 +96,7 @@ Public Class Automovil
                 tmp.Cilindrada = Integer.Parse(row(3))
                 tmp.Precio = Double.Parse(row(4))
                 tmp.Transmision = row(5)
-                tmp.Combustible = Integer.Parse(row(6))
+                tmp.Combustible = row(6)
                 tmp.Kilometraje = Integer.Parse(row(7))
                 tmp.idcolor = Integer.Parse(row(8))
                 tmp.idEstilo = Integer.Parse(row(9))
